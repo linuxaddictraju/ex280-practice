@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: gitdata-vol
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+  - ReadWriteOnce
+  nfs:
+    server: 192.168.1.163
+    path: /exports/gitdata
+  persistentVolumeReclaimPolicy: Retain
+
